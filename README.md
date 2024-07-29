@@ -1,9 +1,6 @@
-# My Web Application
-## Project Setup
-To get started with the project, follow
-these steps:
-1. **Clone the Repository:**
-```sh
-git clone <repository-url>
-cd my-web-application
-```
+## Usage for Recipe Ingredient Substitutes
+1. **Search for Substitutes:**
+    - Enter an ingredient in the search bar and click the "Search" button to find substitutes.
+
+2. **Navigate the Site:**
+    - Use the navigation bar to access different sections: Search, How To Use, Add Items.

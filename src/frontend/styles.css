@@ -14,6 +14,7 @@ body {
 
 section {
     padding-bottom: 60px;
+    margin-bottom: 10rem; 
 }
 
 .body-header {
@@ -21,7 +22,7 @@ section {
 }
 
 h2 {
-    color: #1b4332;
+    color: #1b4d90; 
 }
 
 #nav-container ul {
@@ -32,38 +33,28 @@ h2 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-align: center;
-    background-color: #a9d6e5;
+    background-color: #add8e6; 
 }
 
 #nav-container ul li {
     height: 55px;
     width: 200px;
     text-align: center;
-    background-color: #a9d6e5;
+    background-color: #add8e6; 
     vertical-align: middle;
     display: table-cell;
 }
 
 #nav-container ul li:hover {
-    background-color: #89c2d9;
+    background-color: #87ceeb; 
     color: black;
 }
 
 #nav-container ul li a {
     text-decoration: none;
     padding-left: 5px;
-    color: #081c15;
+    color: #1b4d90; 
     font-size: 22px;
-}
-
-#nav-container ul li a.active {
-    color: #89c2d9;
-    font-weight: bold;
-}
-
-.sep {
-    height: 5px;
-    background-color: #081c15;
 }
 
 #heading-container {
@@ -83,4 +74,31 @@ h2 {
 #page-padding {
     margin-left: 15px;
     margin-right: 15px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#search-input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#search-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#result-container {
+    text-align: center;
+    font-size: 18px;
+    color: #1b4d90; 
+    margin-top: 20px;
 }
