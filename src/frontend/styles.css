@@ -19,7 +19,6 @@ time, mark, audio, video {
     vertical-align: baseline;
 }
 
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
@@ -28,7 +27,6 @@ body {
     margin: 0;
     padding: 0;
 }
-
 
 header {
     background-color: #1b4d90;
@@ -84,7 +82,7 @@ nav {
     font-size: 1.2rem;
     font-weight: 600;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 20px;
     transition: background-color 0.3s ease;
 }
 
@@ -92,7 +90,6 @@ nav {
     background-color: #87ceeb;
     color: white;
 }
-
 
 #page-padding {
     padding: 20px;
@@ -113,7 +110,6 @@ body {
     width: 100%;
     max-width: 1200px;
 }
-
 
 section {
     margin-bottom: 40px;
@@ -136,7 +132,6 @@ ol {
     padding-left: 20px;
     list-style: decimal inside;
 }
-
 
 .search-container {
     display: flex;
@@ -204,7 +199,6 @@ ol {
 #submit-substitute-button:hover {
     background-color: #14507e;
 }
-
 
 #past-searches-container {
     width: 250px;
