@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, '../')));
 
 const db = await Database();
 
-// Function to populate database from substitutes.txt
+
 const populateDatabaseFromFileSync = () => {
     try {
         const data = fs.readFileSync(path.join(__dirname, '../substitutes.txt'), 'utf8');
@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../index.html'));
 });
 
-// API routes for substitutes
+
 app.get('/api/substitutes', async (req, res) => {
     const ingredient = req.query.ingredient;
     const result = await db.getSubstituteByIngredient(ingredient);
@@ -55,7 +55,7 @@ app.post('/api/add-substitute', async (req, res) => {
     const { ingredient, substitute } = req.body;
     const result = await db.addSubstitute(ingredient, substitute);
     if (result.status === "ok") {
-        // Append to substitutes.txt
+
         try {
             const formattedEntry = `${ingredient}: ${substitute}\n`;
             fs.appendFileSync(path.join(__dirname, '../substitutes.txt'), formattedEntry, 'utf8');
@@ -89,7 +89,7 @@ app.delete('/api/delete-substitute', async (req, res) => {
     }
 });
 
-// Start the server
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });

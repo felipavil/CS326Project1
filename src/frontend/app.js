@@ -2,23 +2,44 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchButton = document.getElementById("search-button");
     const searchInput = document.getElementById("search-input");
     const resultContainer = document.getElementById("result-container");
+    const pastSearchesList = document.getElementById("past-searches-list");
+
+    let pastSearches = [];
 
     searchButton.addEventListener("click", async () => {
         const ingredient = searchInput.value.trim().toLowerCase();
-        resultContainer.innerHTML = ""; // Clear previous results
+        resultContainer.innerHTML = ""; 
         if (ingredient) {
-            const response = await fetch(`/api/substitutes?ingredient=${ingredient}`);
-            const data = await response.json();
-            if (data.substitute === "No substitute found for this ingredient.") {
-                resultContainer.textContent = data.substitute;
-                createNewSubstituteInput(ingredient); // Add the new input fields
-            } else {
-                resultContainer.textContent = data.substitute;
-            }
+            await performSearch(ingredient);
+            addPastSearch(ingredient); 
         } else {
             resultContainer.textContent = "Please enter an ingredient.";
         }
     });
+
+    async function performSearch(ingredient) {
+        const response = await fetch(`/api/substitutes?ingredient=${ingredient}`);
+        const data = await response.json();
+        if (data.substitute === "No substitute found for this ingredient.") {
+            resultContainer.textContent = data.substitute;
+            createNewSubstituteInput(ingredient);
+        } else {
+            resultContainer.textContent = data.substitute;
+        }
+    }
+
+    function addPastSearch(ingredient) {
+        if (!pastSearches.includes(ingredient)) {
+            pastSearches.push(ingredient);
+            const listItem = document.createElement("li");
+            listItem.textContent = ingredient;
+            listItem.addEventListener("click", () => {
+                searchInput.value = ingredient;
+                performSearch(ingredient); 
+            });
+            pastSearchesList.appendChild(listItem);
+        }
+    }
 
     function createNewSubstituteInput(ingredient) {
         const newSubstituteContainer = document.createElement("div");
